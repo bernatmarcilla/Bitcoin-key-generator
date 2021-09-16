@@ -12,3 +12,9 @@ Function that generates a key pair (private key / public key) that can be used i
 
  A function that generates a public key from a private key. The function receives the private key (SK) as a parameter. The function will return the public key represented as a point of the elliptic curve _secp256k1_
 
+## Private key export function
+
+Function that converts a private key in [WIF](https://en.bitcoin.it/wiki/Wallet_import_format) format. The function receives three input parameters:
+* The private key to convert
+* The network for which you want to export the key (which can be MAINET or TESTNET)
+* A boolean (True / False) that will indicate whether the export is to be done in compressed mode or not. The function returns the value of the private key in [WIF](https://en.bitcoin.it/wiki/Wallet_import_format) format
