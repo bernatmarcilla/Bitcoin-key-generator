@@ -2,6 +2,11 @@
 
 The goal of this project is to create the necessary functions to generate Bitcoin keys, both public and private, and calculate their corresponding addresses. It will also allow us to generate private keys in WIF format that can be imported into standard wallets
 
+![Public key to bitcoin address](./img/BitcoinAddress.png "Public key to bitcoin address")
+
+Public key to bitcoin address: conversion of a public key into a bitcoin address. 
+From [Mastering Bitcoin: Programming the Open Blockchain](https://bitcoinbook.info/)
+
 ## Key pair generation function
 
 Function that generates a key pair (private key / public key) that can be used in the Bitcoin system. The function does not receive any input parameters and generates a random private key. The function returns a two value vector:
