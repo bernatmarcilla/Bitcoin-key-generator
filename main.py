@@ -116,6 +116,17 @@ def b58decode(v, length=None):
 #
     
 def key_gen():
+    """
+    Function that generates a key pair (private key / public key) that can be used in the Bitcoin system. 
+    The function does not receive any input parameters and generates a random private key
+    
+    Returns 
+    --------
+    keys[0] : int 
+        The private key and will be represented as an integer of the ring in which the secp256k1 curve works
+    keys[1] : C.point
+        The public key and will be represented as a point of the elliptic curve
+    """
     
     keys = []
 
@@ -136,13 +147,22 @@ def key_gen():
 
 
 # Bitcoin public key computation
-#
-# Function pk_from_sk()
-# 
-#
 
 def pk_from_sk(sk):
+    """
+    A function that generates a public key from a private key. 
+    The function receives the private key (SK) as a parameter. 
     
+    Attributes
+    -------
+    sk : C.point
+        The secret key
+
+    Returns
+    -------
+    pk : C.point
+        The public key represented as a point of the elliptic curve secp256k1
+    """    
     #Generator Point
     G = C.point((0x79BE667EF9DCBBAC55A06295CE870B07029BFCDB2DCE28D959F2815B16F81798,0x483ADA7726A3C4655DA4FBFC0E1108A8FD17B448A68554199C47D08FFB10D4B8))
     
