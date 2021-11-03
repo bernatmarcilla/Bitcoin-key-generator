@@ -163,6 +163,7 @@ def pk_from_sk(sk):
     pk : C.point
         The public key represented as a point of the elliptic curve secp256k1
     """    
+
     #Generator Point
     G = C.point((0x79BE667EF9DCBBAC55A06295CE870B07029BFCDB2DCE28D959F2815B16F81798,0x483ADA7726A3C4655DA4FBFC0E1108A8FD17B448A68554199C47D08FFB10D4B8))
     
@@ -177,6 +178,24 @@ def pk_from_sk(sk):
 #
 
 def sk_to_wif(sk, network, compressed):
+
+    """
+    Function that converts a private key in WIF format. 
+    
+    Attributes
+    -------
+    sk : C.point
+        The secret key to convert
+    network : string
+        The network for which you want to export the key (which can be MAINET or TESTNET)
+    compressed : boolean
+       Will indicate whether the export is to be done in compressed mode or not 
+
+    Returns
+    -------
+    wif : b58char
+        The value of the private key in WIF format
+    """   
     
     if (network == 'TESTNET'):
         if (compressed == True): # Add suffix '01' to indicate a compressed private key
@@ -209,7 +228,24 @@ def sk_to_wif(sk, network, compressed):
 #
 
 def get_address(pk, network, compressed):
-    
+    """
+    Function that generates a P2PKH Bitcoin address from a public key.
+
+    Attributes
+    -------
+    pk : C.point
+        The secret key to convert
+    network : string
+        The network for which you want to export the key (which can be MAINET or TESTNET)
+    compressed : boolean
+       Will indicate whether the export is to be done in compressed mode or not 
+
+    Returns
+    -------
+    address : str
+        The P2PKH Bitcoin address
+
+    """
     x =str(hex(int(pk[0])))
     y =str(hex(int(pk[1])))
         
