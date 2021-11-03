@@ -14,7 +14,7 @@ Function that generates a key pair (private key / public key) that can be used i
  * The second value of the vector will be the public key and will be represented as a point of the elliptic curve
 
 ```python
-def key_gen():
+def key_gen()
 ```
 
  ## Public key generation function
@@ -22,7 +22,7 @@ def key_gen():
  A function that generates a public key from a private key. The function receives the private key (SK) as a parameter. The function will return the public key represented as a point of the elliptic curve _secp256k1_
 
  ```python
-def pk_from_sk(sk):
+def pk_from_sk(sk)
 ```
 
 ## Private key export function
@@ -34,7 +34,7 @@ Function that converts a private key in [WIF](https://en.bitcoin.it/wiki/Wallet_
 The function returns the value of the private key in [WIF](https://en.bitcoin.it/wiki/Wallet_import_format) format
 
  ```python
-def sk_to_wif(sk, network, compressed):
+def sk_to_wif(sk, network, compressed)
 ```
 
 ## Bitcoin address generation function
@@ -46,5 +46,5 @@ Function that generates a P2PKH Bitcoin address from a public key. The function 
 The function returns the address
 
  ```python
-def get_address(pk, network, compressed):
+def get_address(pk, network, compressed)
 ```
